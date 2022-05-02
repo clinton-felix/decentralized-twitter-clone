@@ -2,7 +2,7 @@
 pragma solidity ^0.8.4;
 
 contract UserStorage {
-    mapping (uint => Profile) profiles;
+    mapping (uint => Profile) public profiles;
     /* Instantiate a struct for profile and a way to fetch them 
         using a mapping declaratiion when a unique ID is provided
     */
@@ -11,7 +11,7 @@ contract UserStorage {
         bytes32 username;
     }
     // A count to keep track of the latest user iD that has been taken 
-    uint latestUserId; 
+    uint public latestUserId = 0; 
 
 
     function createUser(bytes32 _username) external returns(uint) {
