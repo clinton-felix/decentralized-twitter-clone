@@ -26,4 +26,11 @@ contract UserStorage {
 
     }
 
+    function getUserFromId(uint _userId) external view returns(uint, bytes32) {
+        return (
+            profiles[_userId].id,
+            profiles[_userId].username
+        );
+    }
+
 }
